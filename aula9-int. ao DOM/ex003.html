@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+
+<style>
+    body{
+        background-color: rgba(0, 0, 139, 0.336);
+    }
+    div{
+        font:normal 14pt arial;
+        background-color: rgba(100, 148, 237, 0.788);
+        color: white;
+        padding: 9px 11px;
+        width:97%;
+        margin: auto;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.404);
+        margin-bottom: 12px;
+        line-height: 32px;
+        border: 1px solid  rgba(100, 148, 237, 0.897);
+        border-radius:12px;
+    }
+    h1,h2,h3,h4{
+        text-align:center;
+    }
+</style>
+
+</head>
+<body>
+    <div>
+        <h2>Iniciando Estudos com DOM</h2>
+        <p>Estou estudando o <b>DOM</b> no Js</p>
+ 
+        
+        <script>
+
+            window.document.write(window.document.charset+"<br/>")
+            window.document.write(window.location.href+"<br/>")
+            window.document.write(window.navigator.appName+"<br/>")
+        </script>
+    </div> 
+
+    <div>
+        <h2>Seletores no Js</h2>
+    
+        <script>
+            var p1 = document.getElementsByTagName('p')[0]
+            var corpo = document.body;
+            document.write(p1.innerText);
+           //p1.innerText = "O js e muito bom";
+          // p1.style.color ="blue";
+          // corpo.style.backgroundColor ="black";
+
+        </script>
+    </div> 
+
+
+</body>
+</html>

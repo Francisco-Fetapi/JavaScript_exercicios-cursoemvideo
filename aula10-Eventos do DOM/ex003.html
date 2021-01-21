@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos do DOM</title>
+
+<style>
+    body{
+        background-color: rgba(0, 0, 139, 0.336);
+    }
+    div.a{
+        font:bolder 20pt arial;
+        background-color: rgba(100, 148, 237, 0.788);
+        color: white;
+        padding: 12px 16px;
+        width:50%;
+        height:200px;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.404);
+        margin-bottom: 12px;
+        border: 1px solid  rgba(100, 148, 237, 0.897);
+        border-radius:12px;
+        line-height: 200px;
+        text-align: center;
+    }
+    div.b{
+        font:normal 14pt arial;
+        background-color: rgba(100, 148, 237, 0.788);
+        color: white;
+        padding: 9px 11px;
+        width:97%;
+        margin: auto;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.404);
+        margin-bottom: 12px;
+        line-height: 32px;
+        border: 1px solid  rgba(100, 148, 237, 0.897);
+        border-radius:12px;
+    }
+    h1,h2,h3,h4{
+        text-align:center;
+    }
+    #btn{
+        padding: 6px 16px;
+        font-size:13pt;
+        border:none;
+        color: white;
+        background-color: rgba(19, 204, 164, 0.658);
+        border-radius:4px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.726);
+    }
+    #btn:hover{
+        background-color: rgba(13, 235, 61, 0.89);
+    }
+    #btn:active{
+        background-color: rgba(13, 235, 24, 0.911);
+    }
+    input.n{
+        width:100px;
+        font-size:22px;
+    }
+    input.n:hover{
+    background-color: rgba(0, 0, 0, 0.134);
+}
+input.n:focus{
+    background-color: rgba(0, 0, 0, 0.315);
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+    <div id="div" class="a">
+        interaja...
+    </div>
+
+    <div class="b">
+        <h2>Somando 2 numeros</h2>
+        <input type="number" name="n1" class="n" id="num1" max="10000">+
+        <input type="number" name="n2" class="n" id="num2" max="10000">
+        <input type="button" value="Somar" id="btn">
+        
+        <div id="res">
+            Resultado
+        </div>
+    </div>
+
+<script>
+    var d = window.document.getElementById('div');
+    
+    d.addEventListener('click',clicar);
+    d.addEventListener('mouseenter',entrar);
+    d.addEventListener('mouseout',sair);
+
+    function clicar(){
+        d.innerText = "Clicado...";
+        d.style.backgroundColor = "rgba(101,222,98,0.99)"
+    }
+    function entrar(){
+        d.innerText = "Entrou";
+        d.style.backgroundColor = "rgba(101,222,98,0.5)"
+ }
+    function sair(){
+        d.innerText = "Saiu";
+        d.style.backgroundColor = "rgba(100, 148, 237, 0.788)";
+
+    }
+
+    //Soma
+    var b = window.document.getElementById('btn');
+    b.addEventListener('click',somar);
+
+    function somar(){
+        var tn1 = document.getElementById('num1');
+        var tn2 = document.getElementById('num2');
+        var res = document.querySelector('#res');
+    
+        var n1 = Number(tn1.value);
+        var n2 = Number(tn2.value);
+        var s = n1 + n2;
+
+        res.innerHTML ='<b>'+n1+'</b> + '+'<b>'+n2+'</b>'+'<b> = '+s+'</b>';
+    }
+
+</script>
+
+</body>
+</html>
